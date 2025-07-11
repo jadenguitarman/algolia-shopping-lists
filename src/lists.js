@@ -1,0 +1,7 @@
+const generateIdeas = () => {
+
+};
+
+const findProducts = () => {
+
+};

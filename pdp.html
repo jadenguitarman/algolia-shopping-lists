@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css"
+      integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ="
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./src/common.css" />
+
+    <title></title>
+
+    <style>
+      #product-details {
+        display: flex;
+        height: min(85vh, calc(100vh - 50px));
+        width: 100%;
+      }
+
+      #product-details > div {
+        width: 50%;
+        padding: 3vmin;
+      }
+
+      #product-details > div:first-child > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #e5e5e5;
+        border: 2px solid var(--border);
+      }
+
+      #product-details > div:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      #breadcrumbs {
+        text-transform: capitalize;
+      }
+
+      #product-name, #product-price {
+        text-align: right;
+      }
+
+      #product-name {
+        font-size: 5vmin;
+      }
+
+      #product-price {
+        font-size: 3vmin;
+      }
+
+      #size-select {
+        cursor: pointer;
+        border: 1px solid var(--border);
+        padding: 1vmin;
+        border-radius: 1vmin;
+      }
+
+      #product-details-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+      }
+
+      #qa-input {
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: #e5e5e5;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+      }
+
+      @media (max-width:700px) {
+        #product-details {
+          flex-direction: column-reverse;
+          height: min(85vh, calc(100vh - 150px));
+        }
+
+        #product-details > div {
+          width: 100%;
+          padding: 3vmin;
+        }
+
+        #product-details > div:first-child {
+          height: 40%;
+        }
+
+        #product-details > div:last-child {
+          height: 60%;
+          align-items: center;
+        }
+
+        #product-name, #product-price {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="logo.svg" />
+      </a>
+      <div id="searchbox"></div>
+    </header>
+
+    <main>
+      <section id="product-details">
+        <div>
+          <img id="product-image" />
+        </div>
+        
+        <div>
+          <div id="breadcrumbs"></div>
+          <h2 id="product-name"></h2>
+
+          <div id="product-details-row">
+            <p id="product-price"></p>
+            <div id="product-sizes"></div>
+            <button id="add-to-cart">Add To Cart</button>
+          </div>
+
+          <input
+            id="qa-input"
+            type="text"
+            placeholder="Ask a question..."
+          />
+        </div>
+      </section>
+      <section id="lookingSimilar"></section>
+      <section id="relatedProducts"></section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"
+      integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.75.6"></script>
+    <script src="./src/common.js"></script>
+    <script src="./src/pdp.js"></script>
+  </body>
+</html>

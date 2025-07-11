@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.5.1/themes/reset-min.css"
+      integrity="sha256-KvFgFCzgqSErAPu6y9gz/AhZAvzK48VJASu3DpNLCEQ="
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./src/common.css" />
+
+    <title>Alpha Fashion</title>
+
+    <style>
+      main {
+        margin-top: 2vh;
+      }
+
+      #gender {
+        text-transform: uppercase;
+      }
+
+      #gender ul {
+        display: flex;
+      }
+
+      #gender li {
+        width: calc(50% - 4vmin - 2px);
+        padding: 2vmin;
+        margin: 0 2vmin;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        text-align: center;
+      }
+      
+      .ais-Menu-count {
+        display: none;
+      }
+
+      #hits, #hits > div {
+        width: 100%;
+      }
+
+      #hits ol {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 700px) {
+        #hits ol {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1000px) {
+        #hits ol {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .ais-InfiniteHits-loadMore {
+        display: none;
+      }
+
+      #pagination {
+        margin: 2rem auto;
+        text-align: center;
+      }
+
+      #pagination.pagination-done {
+        display: none;
+      }
+
+      #pagination p {
+        color: #91929d;
+      }
+
+      #pagination-progress {
+        background-color: var(--border);
+        display: inline-block;
+        border-radius: 2px;
+        width: 200px;
+        height: 3px;
+      }
+
+      #pagination-current-progress {
+        background-color: #23263b;
+        border-radius: 2px;
+        width: var(--bar-width);
+        height: 100%;
+      }
+
+      #pagination > button {
+        margin-top: 2vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="logo.svg" />
+      </a>
+      <div id="searchbox"></div>
+    </header>
+    
+    <main>
+      <div id="gender"></div>
+      <div id="hits"></div>
+      <div id="pagination">
+        <div id="pagination-progress">
+          <div id="pagination-current-progress">
+          </div>
+        </div>
+
+        <p>You've seen <span id="pagination-seen-hits"></span> products out of <span id="pagination-total-hits"></span></p>
+
+        <button>Load More</button>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"
+      integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.75.6"></script>
+    
+    <script src="./src/common.js"></script>
+    <script src="./src/srp.js"></script>
+  </body>
+</html>
