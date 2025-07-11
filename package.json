@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "scripts": {
+    "start": "parcel index.html pdp.html"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "openai": "^5.9.0",
+    "zod": "^3.25.76"
+  }
+}

@@ -1,0 +1,1 @@
+To run this repository, just go to your terminal and run `npm install && npm start`.
